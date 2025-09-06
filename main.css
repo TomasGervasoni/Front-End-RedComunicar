@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+:root {
+    --color-fondo: #000000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==== Header ==== */
+
+.encabezado {
+  display: flex; /* Habilita Flexbox para organizar los elementos hijos (logo y nav) */
+  justify-content: space-between; /* Coloca el `.logo` a la izquierda y `nav` a la derecha */
+  align-items: center; /* Centra verticalmente el logo y los botones de navegación */
+  gap: 15px;
+  padding: 10px 20px; /* Espaciado interno superior/inferior y lateral */
+  background-color: var(--color-fondo); /* Fondo para la barra de navegación */
+  border-bottom: 1px solid var(--color-fondo); /* Un borde sutil en la parte inferior */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Una sombra suave para darle un poco de elevación */
+  height: 90px;
+}
+
+.encabezado .logo h1{
+  color: rgb(255, 255, 255);
+}
+
+.encabezado nav {
+  flex-grow: 1;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+/* Estilos para el contenedor del logo y el nombre "Red Comunicar" */
+.logo {
+    display: flex; /* Habilita Flexbox para alinear la imagen y el h1 */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+.logo img {
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 15px; /* Espacio entre el logo y el texto "Red Comunicar" */
+    border-radius: 40px;
+    border-color: #f4f4f4;
+}
+
+.logo h1 {
+    font-size: 2.2em; /* Tamaño de fuente más grande para "Red Comunicar" */
+    color: #000000; /* Un color vibrante para el nombre, ajusta a tu marca */
+    margin: 0; /* Elimina el margen predeterminado de los h1 para una mejor alineación */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra de texto sutil */
+}
+
+
+
+
+/* Estilos para la navegación (botones: Inicio, Reservas, Contacto) */
+nav {
+    display: flex; /* Habilita Flexbox para los enlaces de navegación */
+    gap: 25px; /* Espacio entre cada botón de navegación */
+}
+
+nav a {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: #333; /* Color oscuro para el texto de los botones */
+    font-size: 1.1em; /* Tamaño de fuente para los botones */
+    font-weight: bold; /* Hace el texto un poco más grueso */
+    padding: 10px 20px; /* Espaciado interno para hacer los botones más fáciles de clickear */
+    border: 2px solid #ffffff; /* Un borde con el color de tu marca */
+    border-radius: 25px; /* Bordes más redondeados para un aspecto moderno */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* Transiciones suaves al interactuar */
+}
+
+nav a:hover {
+    background-color: #ffffff; /* Fondo al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    border-color: #ffffff; /* Cambia el color del borde al pasar el ratón */
+}
+
+.encabezado nav a {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.encabezado nav a:hover {
+  color: #000000;
+  background: #f4f4f4;
+}
+
+/* ===== Menú hamburguesa estilizado y animado ===== */
+.menu-hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.menu-hamburguesa span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+  position: relative;
+}
+
+/* Animación hamburguesa a X */
+.menu-hamburguesa.activo span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-hamburguesa.activo span:nth-child(2) {
+  opacity: 0;
+}
+.menu-hamburguesa.activo span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .encabezado {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .logo {
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+  }
+  .menu-hamburguesa {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    /* z-index: 2; */
+  }
+  .encabezado nav {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-fondo);
+    flex-direction: column;
+    gap: 0;
+    padding-top: 100px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    transition: left 0.4s cubic-bezier(.77,0,.18,1);
+    z-index: 1000;
+    display: flex;
+  }
+  .encabezado nav.activo {
+    left: 0;
+  }
+  .encabezado nav a {
+    color: #fff;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.3em;
+    border-bottom: 1px solid #222;
+    border-radius: 0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .encabezado nav a:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+@media (max-width: 1155px) and (min-width: 769px) {
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .logo {
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .encabezado nav {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-bottom: 10px;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .encabezado nav a {
+    width: auto;
+    min-width: 90px;
+    text-align: center;
+  }
+  .menu-hamburguesa {
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+}
+
+/* algunos debugs aplicados para el diseño responsive */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main {
+  min-height: calc(100vh - 180px); /* 100vh menos la altura aproximada de header + footer */
+}
