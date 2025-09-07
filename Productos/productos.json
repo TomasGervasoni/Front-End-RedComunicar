@@ -5,7 +5,8 @@
     "precio": 32000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Antena colineal uhf 300x300.jpg",
     "descripcion": "Antena colineal UHF diseñada para ofrecer excelente ganancia y estabilidad en entornos urbanos y rurales.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "precio": 28000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Antena con irradiante 800MHz Motorola.jpg",
     "descripcion": "Antena con irradiador optimizada para sistemas Motorola, frecuencia 800MHz, ideal para comunicaciones seguras.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "precio": 15000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Antena GPS conector SMA Macho.jpg",
     "descripcion": "Antena GPS compacta con conector SMA macho, ideal para equipos de navegación y seguimiento satelital.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "precio": 45000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Antena Yagui 9 elementos UHF 800-960 MHz.jpg",
     "descripcion": "Antena Yagi de 9 elementos, diseñada para frecuencias UHF entre 800-960 MHz, ideal para enlaces direccionales.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "precio": 48000,
     "imagen": "./Catalogo Red Comunicar/Antenas/antena-yagui-6-elementos-celular-extrarreforzada-600x421.jpg",
     "descripcion": "Antena Yagi extrarreforzada de 6 elementos para redes celulares, excelente rendimiento en exteriores.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "precio": 12000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Bobina VHF.jpg",
     "descripcion": "Bobina VHF de alta calidad para sistemas de radiofrecuencia, diseñada para optimizar la transmisión.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "precio": 25000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Irradiante VHF.jpg",
     "descripcion": "Antena irradiadora VHF robusta, ideal para sistemas de radiocomunicación profesional.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "precio": 27000,
     "imagen": "./Catalogo Red Comunicar/Antenas/RINGO-VHF.jpg",
     "descripcion": "Antena RINGO VHF diseñada para máximo alcance y durabilidad en instalaciones fijas.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   },
   {
     "id": 9,
@@ -69,6 +77,7 @@
     "precio": 8000,
     "imagen": "./Catalogo Red Comunicar/Antenas/Sujeta Irradiante (800MHz).jpg",
     "descripcion": "Soporte sujeta irradiador para antenas de 800MHz, fabricado en material resistente para máxima fijación.",
-    "categoria": "Antenas"
+    "categoria": "Antenas",
+     "stock": 15
   }
 ]

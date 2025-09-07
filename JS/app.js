@@ -6,35 +6,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     const productos = await respuesta.json();
 
     productos.forEach(producto => {
-      // Crear contenedor del producto
-      const card = document.createElement('div');
-      card.classList.add('card-producto');
-      
+      // Contenedor principal del producto
+      const item = document.createElement('div');
+      item.classList.add('item-producto');
+
       // Imagen
       const img = document.createElement('img');
       img.src = producto.imagen;
       img.alt = producto.nombre;
+      img.classList.add('img-producto');
 
-      // Nombre
+      // Contenedor del texto
+      const info = document.createElement('div');
+      info.classList.add('info-producto');
+
       const nombre = document.createElement('h3');
       nombre.textContent = producto.nombre;
 
-      // Precio
+      const descripcion = document.createElement('p');
+      descripcion.textContent = producto.descripcion;
+
+      info.appendChild(nombre);
+      info.appendChild(descripcion);
+
+      // Contenedor stock y precio
+      const extra = document.createElement('div');
+      extra.classList.add('extra-producto');
+
       const precio = document.createElement('p');
-      precio.classList.add('precio');
-      precio.textContent = `$ ${producto.precio.toLocaleString()}`;
+      precio.textContent = `$${producto.precio.toLocaleString()}`;
 
-      // Añadir al card
-      card.appendChild(img);
-      card.appendChild(nombre);
-      card.appendChild(precio);
+      const stock = document.createElement('p');
+      stock.textContent = `Stock: ${producto.stock}`;
 
-      // Evento para mostrar emergente con detalles
-      card.addEventListener('click', () => {
-        mostrarEmergente(producto);
-      });
+      extra.appendChild(precio);
+      extra.appendChild(stock);
 
-      contenedor.appendChild(card);
+      // Armar la estructura final
+      item.appendChild(img);
+      item.appendChild(info);
+      item.appendChild(extra);
+
+      // Evento para modal
+      item.addEventListener('click', () => mostrarEmergente(producto));
+
+      contenedor.appendChild(item);
     });
 
   } catch (error) {
@@ -42,7 +58,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Función para mostrar emergente
 function mostrarEmergente(producto) {
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
@@ -56,21 +71,17 @@ function mostrarEmergente(producto) {
     <p><strong>Categoría:</strong> ${producto.categoria}</p>
     <p>${producto.descripcion}</p>
     <p><strong>Precio:</strong> $${producto.precio.toLocaleString()}</p>
+    <p><strong>Stock:</strong> ${producto.stock}</p>
     <button class="cerrar-modal">Cerrar</button>
   `;
 
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  // Cerrar modal
-  modal.querySelector('.cerrar-modal').addEventListener('click', () => {
-    overlay.remove();
-  });
-
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.remove();
-  });
+  modal.querySelector('.cerrar-modal').addEventListener('click', () => overlay.remove());
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.querySelector('.menu-hamburguesa');
