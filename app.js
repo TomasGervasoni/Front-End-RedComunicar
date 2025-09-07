@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   navLinks.forEach(link => {
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        nav.classList.remove('activo');
+        menuBtn.classList.remove('activo');
+      }
+    });
     link.addEventListener('click', function() {
       nav.classList.remove('activo');
       menuBtn.classList.remove('activo');
