@@ -127,13 +127,13 @@ nav a:hover {
 
 /* Animación hamburguesa a X */
 .menu-hamburguesa.activo span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
+  /* transform: rotate(45deg) translate(2px, 2px); */
 }
 .menu-hamburguesa.activo span:nth-child(2) {
   opacity: 0;
 }
 .menu-hamburguesa.activo span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
+  /* transform: rotate(-45deg) translate(2px, -2px); */
 }
 
 /* ===== Responsive ===== */
