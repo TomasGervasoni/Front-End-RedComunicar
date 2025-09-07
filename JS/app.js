@@ -21,3 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+const toggleThemeBtn = document.getElementById("toggle-theme");
+
+toggleThemeBtn.addEventListener("click", () => {
+  const root = document.documentElement;
+
+  // Obtenemos los valores actuales
+  const dark = getComputedStyle(root).getPropertyValue("--clr-dark").trim();
+  const light = getComputedStyle(root).getPropertyValue("--clr-light").trim();
+
+  // Intercambiamos los valores
+  root.style.setProperty("--clr-dark", light);
+  root.style.setProperty("--clr-light", dark);
+});
