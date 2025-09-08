@@ -275,11 +275,12 @@ nav a:hover, .contenedorBTNcarrito a:hover {
 /* Info central */
 .info-producto {
   flex: 1;
-  margin-left: 10px;
+  margin-left: 1px;
+  max-width: 100%;
 }
 
 .info-producto h3 {
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 5px;
   color: var(--clr-light);
 }
@@ -376,6 +377,7 @@ nav a:hover, .contenedorBTNcarrito a:hover {
     padding-bottom: 0;
     padding: 2px;
     border-bottom: 1px solid var(--clr-light);
+    height: 110px;
   }
   /* Logo */
   .logo {
@@ -384,16 +386,17 @@ nav a:hover, .contenedorBTNcarrito a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90px;
+    height: 10px;
     position: relative;
     z-index: 1;
   }
   .logo img {
     height: 60px;
-    margin-right: 10px;
+    margin-left: 60px;
+    margin-right: 0px;
   }
   .logo h1 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: var(--clr-light);
     text-align: start;
   }
