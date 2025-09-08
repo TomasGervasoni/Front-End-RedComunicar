@@ -23,24 +23,24 @@ document.addEventListener('DOMContentLoaded', async () => {
       const nombre = document.createElement('h3');
       nombre.textContent = producto.nombre;
 
-      const descripcion = document.createElement('p');
-      descripcion.textContent = producto.descripcion;
+      // const descripcion = document.createElement('p');
+      // descripcion.textContent = producto.descripcion;
 
       info.appendChild(nombre);
-      info.appendChild(descripcion);
+      // info.appendChild(descripcion);
 
-      // Contenedor stock y precio
+      // Contenedor precio (por ahora sin stock)
       const extra = document.createElement('div');
       extra.classList.add('extra-producto');
 
       const precio = document.createElement('p');
       precio.textContent = `$${producto.precio.toLocaleString()}`;
 
-      const stock = document.createElement('p');
-      stock.textContent = `Stock: ${producto.stock}`;
+      // const stock = document.createElement('p');
+      // stock.textContent = `Stock: ${producto.stock}`;
 
       extra.appendChild(precio);
-      extra.appendChild(stock);
+      // extra.appendChild(stock);
 
       // Armar la estructura final
       item.appendChild(img);
@@ -58,6 +58,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// 🛒 Array para el carrito
+let carrito = [];
+
 function mostrarEmergente(producto) {
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
@@ -72,16 +75,27 @@ function mostrarEmergente(producto) {
     <p>${producto.descripcion}</p>
     <p><strong>Precio:</strong> $${producto.precio.toLocaleString()}</p>
     <p><strong>Stock:</strong> ${producto.stock}</p>
+    <button class="btn-agregar">Agregar al carrito</button>
     <button class="cerrar-modal">Cerrar</button>
   `;
 
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
-
+  //Botón cerrar
   modal.querySelector('.cerrar-modal').addEventListener('click', () => overlay.remove());
   overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+
+  //Botón agregar al carrito
+  modal.querySelector('.btn-agregar').addEventListener('click', () => {
+    agregarAlCarrito(producto);
+  });
 }
 
+function agregarAlCarrito(producto) {
+  carrito.push(producto);
+  console.log("Carrito actualizado:", carrito);
+  alert(`${producto.nombre} agregado al carrito 🛒`);
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   const menuBtn = document.querySelector('.menu-hamburguesa');
