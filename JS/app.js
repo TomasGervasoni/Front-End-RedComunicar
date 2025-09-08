@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     intercambiarVariablesTema();
   }
   
+  // ✅ Recuperar carrito
+  const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
+  carrito = carritoGuardado;
+  actualizarContadorCarrito();
   
   const contenedor = document.getElementById('contenedor-productos');
 
@@ -70,6 +74,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // 🛒 Array para el carrito
 let carrito = [];
+const contadorCarrito = document.getElementById('contador-carrito');
+
+function actualizarContadorCarrito() {
+  contadorCarrito.textContent = carrito.length;
+}
 
 function mostrarEmergente(producto) {
   const overlay = document.createElement('div');
@@ -103,7 +112,9 @@ function mostrarEmergente(producto) {
 
 function agregarAlCarrito(producto) {
   carrito.push(producto);
+  localStorage.setItem('carrito',JSON.stringify(carrito)); 
   console.log("Carrito actualizado:", carrito);
+  actualizarContadorCarrito();
   alert(`${producto.nombre} agregado al carrito 🛒`);
 }
 

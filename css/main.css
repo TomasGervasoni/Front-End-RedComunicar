@@ -94,9 +94,49 @@ main {
 }
 
 /* Carrito */
+#lista-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+
+.total-carrito {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.btn-eliminar {
+  background: red;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .contenedorBTNcarrito{
   text-align: center;
   padding-right: 10px;
+  /* position: relative;  */
+}
+.btn-comprar{
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+  margin: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra suave para darle elevación */
+  font-size: 1.4em;
+  border: 1px solid var(--clr-light);
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: 
+    transform 0.2s ease, 
+    background 0.2s, 
+    color 0.2s, 
+    border-color 0.2s;
 }
 .carrito-link{
   color: var(--clr-light);
@@ -116,7 +156,23 @@ main {
   background: var(--clr-light);
   color: var(--clr-dark);
 }
-
+.total-carrito .btn-comprar:hover {
+  transform: translateY(-4px); 
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  cursor: pointer;
+}
+/* .contador-carrito {
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 7px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+} */
 
 /* Estilos para la navegación (botones: Inicio, Reservas, Contacto) */
 nav {
