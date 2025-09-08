@@ -295,7 +295,7 @@ nav a:hover, .contenedorBTNcarrito a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  min-width: 100px;
+  min-width: 1px;
   text-align: right;
 }
 
@@ -337,7 +337,7 @@ nav a:hover, .contenedorBTNcarrito a:hover {
   border-radius: 8px;
 }
 
-.cerrar-modal {
+.cerrar-modal, .btn-agregar {
   background: var(--clr-light);
   color: var(--clr-dark);
   border: none;
@@ -348,7 +348,7 @@ nav a:hover, .contenedorBTNcarrito a:hover {
   font-weight: bold;
 }
 
-.cerrar-modal:hover {
+.cerrar-modal:hover, .btn-agregar:hover {
   background: #aaa;
 }
 

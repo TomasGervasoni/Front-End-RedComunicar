@@ -1,4 +1,14 @@
+const body = document.querySelector("body");
+const toggleThemeBtn = document.getElementById("toggle-theme");
 document.addEventListener('DOMContentLoaded', async () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    body.classList.add("light-mode");
+    intercambiarVariablesTema();
+  }
+  
+  
   const contenedor = document.getElementById('contenedor-productos');
 
   try {
@@ -121,19 +131,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+//amtes del DOM estan las variables del tema
+// Al cargar la página
+//DOM async(Reviso el tema que va)
 
-const toggleThemeBtn = document.getElementById("toggle-theme");
-
+// Evento para alternar tema
 toggleThemeBtn.addEventListener("click", () => {
-  const root = document.documentElement;
+  body.classList.toggle("light-mode");
 
-  // Obtenemos los valores actuales
+  if (body.classList.contains("light-mode")) {
+    localStorage.setItem("theme", "light");
+  } else {
+    localStorage.setItem("theme", "dark");
+  }
+
+  intercambiarVariablesTema();
+});
+
+// Función para intercambiar variables
+function intercambiarVariablesTema() {
+  const root = document.documentElement;
   const dark = getComputedStyle(root).getPropertyValue("--clr-dark").trim();
   const light = getComputedStyle(root).getPropertyValue("--clr-light").trim();
 
-  // Intercambiamos los valores
   root.style.setProperty("--clr-dark", light);
   root.style.setProperty("--clr-light", dark);
-});
-
+}
 
